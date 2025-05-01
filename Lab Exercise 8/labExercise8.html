@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dice Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    #result {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎲 Dice Generator</h1>
+
+  <label for="dice">Choose your dice:</label>
+  <select id="dice">
+    <option value="4">D4</option>
+    <option value="6" selected>D6</option>
+    <option value="8">D8</option>
+    <option value="10">D10</option>
+    <option value="12">D12</option>
+    <option value="20">D20</option>
+  </select>
+
+  <button onclick="rollDice()">Roll Dice</button>
+
+  <div id="result"></div>
+
+  <script>
+    function rollDice() {
+      const dice = document.getElementById("dice").value;
+      const max = parseInt(dice);
+      const roll = Math.floor(Math.random() * max) + 1;
+      document.getElementById("result").innerText = `You rolled: ${roll}`;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1 Exercise 3</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; }
+    .container { display: flex; min-height: 100vh; align-items: stretch; }
+    .column { background: rgb(201, 127, 9); display: flex; flex-direction: column; justify-content: center; align-items: center; flex: 1; padding: 20px; }
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover; 
+      margin-top: 20px;
+    }
+    input {
+      margin-top: 10px;
+      padding: 8px;
+      font-size: 16px;
+      width: 60%;
+      text-align: center;
+      background-color: #0abf28c6; 
+      border: 2px solid #020302; 
+      border-radius: 8px;
+      color: #050303; 
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    button { 
+      margin-top: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <div class="column" id="column1">
+      <h1 id="heading1">Hello</h1>
+      <input type="text" id="input1" placeholder="Enter new heading">
+      <img src="https://redzzoo.com.au/wp-content/uploads/2023/01/IMG_3115-1.jpg" alt="Image 1">
+      <button onclick="changeColumn1()">Change Me</button>
+    </div>
+    
+    <div class="column" id="column2">
+      <h1 id="heading2">World</h1>
+      <input type="text" id="input2" placeholder="Enter new heading">
+      <img src="https://i.pinimg.com/736x/64/04/eb/6404eb9f0f3ec8dd453ffbcc58e87393.jpg" alt="Image 2">
+      <button onclick="changeColumn2()">Change Me</button>
+    </div>
+  </div>
+
+  <script>
+    function changeColumn1() {
+      let newHeading1 = document.getElementById("input1").value;
+      if (newHeading1.trim() !== "") {
+        document.getElementById("heading1").innerText = newHeading1;
+      }
+      document.getElementById("column1").style.backgroundColor = "#3498db";
+    }
+
+    function changeColumn2() {
+      let newHeading2 = document.getElementById("input2").value;
+      if (newHeading2.trim() !== "") {
+        document.getElementById("heading2").innerText = newHeading2;
+      }
+      document.getElementById("column2").style.backgroundColor = "#e74c3c"; 
+    }
+  </script>
+
+</body>
+</html>
